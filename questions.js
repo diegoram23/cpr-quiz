@@ -1,4 +1,4 @@
-const questions = [
+export const questions = [
     {
         question: 'Where should you place the AED pads when treating an infant for pediatric cardiac arrest?',
         answers: [
@@ -83,5 +83,3 @@ const questions = [
 
 ]
 
-
-export default questions

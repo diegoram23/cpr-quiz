@@ -1,4 +1,4 @@
-import { questions } from "/questions.js";
+import { questions } from "./questions.js";
 
 // Variables
 const questionEl = document.getElementById('question')

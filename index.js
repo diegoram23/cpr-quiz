@@ -8,30 +8,53 @@ const nextBtn = document.getElementById('next-btn')
 let score = 0
 let currentQuestionIndex = 0
 
+// Document event listener
 document.addEventListener('click', (e) => {
-    if (e.target) {
+    if (e.target.dataset.correct) {
         handleAnswerClick(e.target)
+    }
+
+    if (e.target.dataset.next) {
+        handleNextBtn()
     }
 })
 
+
+
+// Handles button clicks
 const handleAnswerClick = (id) => {
-
     const isCorrect = id.dataset.correct === 'true'
-    const isFalse = id.dataset.correct === 'false'
 
+    // Changes background color if answer choosen
     if (isCorrect) {
         id.style.backgroundColor = '#00a36c'
-        console.log('yes')
-    } if (isFalse) {
-        id.style.backgroundColor = '#ff3131'
-        console.log('no')
+        score++
+    } else {
+        id.style.backgroundColor = '#ff2400'
     }
+
+    // Next button appears after first answer click
+    nextBtn.style.display = 'block'
+
+    // Loops over answers and reveals the correct answer after user chooses an aswer
+    Array.from(answerBtn.children).forEach(button => {
+        if (button.dataset.correct === 'true') {
+            button.style.backgroundColor = '#00a36c'
+        }
+        // Prevents user from changing answer
+        button.disabled = true
+    })
+}
+
+const handleNextBtn = () => {
+    currentQuestionIndex++
+    getShowQuestionHtml()
+    console.log(currentQuestionIndex, 'here')
 }
 
 const startQuiz = () => {
-    currentQuestionIndex = 0
     score = 0
-    nextBtn.innerHTML = 'Next'
+    currentQuestionIndex = 0
     getShowQuestionHtml()
 }
 
@@ -47,15 +70,10 @@ const getShowQuestionHtml = () => {
         questionHtml += `
         <button class="btn" data-correct='${answer.correct}'>${answer.text}</button>
         `
+        
+        document.getElementById('answer-buttons').innerHTML = questionHtml
     })
-
-
-    return questionHtml
 }
-
-//call and renders possible answers to question displayed
-document.getElementById('answer-buttons').innerHTML = getShowQuestionHtml()
-
 //initializes the app
 startQuiz()
 

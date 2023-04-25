@@ -12,18 +12,19 @@ body {
 .app {
     background-color: #fff;
     width: 92%;
-    max-width: 600px;
-    margin: 100px auto 0;
-    border-radius: 10px;
-    padding: 20px;
+    max-width: 37.5em;
+    margin: 6.25em auto 0;
+    border-radius: 0.62em;
+    padding: 1.25em;
 }
 
 .app h1 {
-    font-size: 25px;
+    font-size: 1.56rem;
     color: #001e4d;
     font-weight: 600;
 }
 
+/*--------------------------- Header --------------------------------*/
 header {
     display: flex;
     align-items: center;
@@ -32,19 +33,22 @@ header {
 }
 
 header .logo {
-    font-size: 45px;
+    font-size: 2.81rem;
     font-weight: 600;
     color: red;
     margin-right: auto;
 }
 
 #quiz h2 {
-    font-size: 22px;
-    margin-bottom: 14px;
+    font-size: 1.37rem;
+    margin-bottom: 0.87em;
     color: #4682B4;
 }
+
+/*--------------------------- Result message and scoreboard --------------------------------*/
+
 #result {
-    padding-top: 10px;
+    padding-top: 0.62em;
     font-weight: 500;
     display: none;
 }
@@ -53,20 +57,24 @@ header .logo {
     font-weight: 600;
     color: #fff;
     background-color: #4682B4;
-    padding: 5px 10px;
-    border-radius: 6px;
+    padding: 0.31em 0.62em;
+    border-radius: 0.37em;
     display: none;
 }
 
+/*--------------------------- Question and possible answers --------------------------------*/
+
 .quiz {
-    padding: 20px 0;
+    padding: 1.25em 0;
 }
 
 .quiz h2 {
-    font-size: 18px;
+    font-size: 0.88rem;
     color: #001e4d;
     font-weight: 600;
 }
+
+/*--------------------------- Buttons --------------------------------*/
 
 .btn {
     background-color: #fff;
@@ -74,8 +82,8 @@ header .logo {
     font-weight: 500;
     width: 100%;
     border: 1px solid #222;
-    padding: 10px;
-    margin: 10px 0;
+    padding: 0.62em;
+    margin: 0.62em 0;
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
@@ -95,13 +103,13 @@ header .logo {
     background-color: #001e4d;
     color: #fff;
     font-weight: 500;
-    width: 150px;
+    width: 9.37em;
     border: 0;
-    padding: 10px;
-    margin: 20px auto;
+    padding: 0.62em;
+    margin: 1.25em auto;
     border-radius: 4px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 1rem;
     display: none;
     transition: all 0.3s;
 }
@@ -110,6 +118,8 @@ header .logo {
     background-color: #222;
     color: #fff;
 }
+
+/*--------------------------- End game --------------------------------*/
 
 #end-result, a {
     color: red;

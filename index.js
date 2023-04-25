@@ -21,12 +21,9 @@ document.addEventListener('click', (e) => {
     if (e.target.dataset.next) {
         handleNextBtn()
     }
-
-    if (e.target.dataset.again) {
-        
-    }
 })
 
+// Click listener for try again button at end game
 againBtn.addEventListener('click', () => {
     location.reload()
 })
@@ -70,7 +67,7 @@ const handleAnswerClick = (id) => {
 }
 
 const handleScore = () => {
-    //Increments score by 1
+    scoreboard.style.display = 'block'
     scoreboard.innerHTML = `Score: ${score} out of ${currentQuestionIndex + 1}`
 }
 
@@ -86,11 +83,18 @@ const handleNextBtn = () => {
 }
 
 const endGame = () => {
-    againBtn.style.display = 'block'
-    mainContent.innerHTML = `
+    const percentScore = (score / currentQuestionIndex * 100)
+    if (percentScore >= 80) {
+        mainContent.innerHTML = `
             <h2>Your final score is ${score} out of ${currentQuestionIndex}</h2>
-            <button id="again-btn" data-again='again-btn'>Again</button>
     `
+    } else {
+        againBtn.style.display = 'block'
+        mainContent.innerHTML = `
+                <h2>Your final score is ${score} out of ${currentQuestionIndex}</h2>
+                <p>We recommend brushing up on your CPR knowledge. Here is a link to the <a href='https://cpr.heart.org/en/resources/what-is-cpr' target='_blank'>American Heart Assosication CPR page<a/></p>
+        `
+    }
 }
 
 // Collects html for current question and possible answers
@@ -108,7 +112,7 @@ const getShowQuestionHtml = () => {
         `
         return questionHtml
     })
-    
+
     document.getElementById('answer-buttons').innerHTML = questionHtml
 
 }

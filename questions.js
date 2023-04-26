@@ -45,7 +45,7 @@ export const questions = [
         ]
     },
     {
-        question: 'During 2 rescuer CPR on an adult victim waht is the compression and breath ratio?',
+        question: 'During 2 rescuer CPR on an adult victim what is the compression and breath ratio?',
         answers: [
             { text: '15:2', correct: false },
             { text: '30:1', correct: false },

@@ -93,6 +93,7 @@ const endGame = () => {
     const percentScore = (score / currentQuestionIndex * 100)
     // If user gets 80% or greater correct then a nice job message appears
     if (percentScore >= 80) {
+        againBtn.style.display = 'block'
         mainContent.innerHTML = `
             <h2>Your final score is ${score} out of ${currentQuestionIndex} nice job!</h2>
     `

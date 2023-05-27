@@ -74,7 +74,7 @@ const handleAnswerClick = (id) => {
 // Displays current score after first click
 const handleScore = () => {
     scoreboard.style.display = 'block'
-    scoreboard.innerHTML = `Score: ${score} out of ${currentQuestionIndex + 1}`
+    scoreboard.innerHTML = `Score: ${score} out of ${questions.length}`
 }
 
 // Advances to next question
